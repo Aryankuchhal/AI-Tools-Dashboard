@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Navbar-->
+    <header class="Navbar">
+        <div class="logo">
+            AI Tools
+        </div>
+        <nav>
+            <a href="#home">home</a>
+            <a href="#tools">Tools</a>
+            <a href="#generator">AI Generator</a>
+            <a href="#history">History</a>
+        </nav>
+        <button id="themebtn">button</button>
+    </header>
+    <!--Hero Section-->
+    <section class="hero" id="home">
+        <div class="hero content">
+            <h1>AI Tools Dashboard</h1>
+            <p>Explore useful AI tools and generate content using a simple and powerful Dashboard</p>
+            <a href="#tools" class="btn">Explore Tools</a>
+        </div>
+    </section>
+    <!--Tools Section-->
+    <section class="tools section" id="tools">
+        <div class="search-content">
+            <input type="text" id="searchinput" placeholder="search AI tools">
+            <select id="categoryfilter">
+                 <option value="all"> all categories </option>
+                 <option value="writing"> writing</option>
+                 <option value="coding">coding</option>  
+                 <option value="image">
+                    Image
+                </option>
+
+                <option value="education">
+                    Education
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="tools-container" id="toolsContainer">
+
+            <div class="tool-card"
+                 data-name="AI Writer"
+                 data-category="writing">
+
+                <div class="icon">✍️</div>
+
+                <h3>AI Writer</h3>
+
+                <p>
+                    Generate articles, blogs and social media content.
+                </p>
+
+                <button
+                    onclick="selectTool('AI Writer')">
+                    Use Tool
+                </button>
+
+            </div>
+
+
+            <div class="tool-card"
+                 data-name="Code Assistant"
+                 data-category="coding">
+
+                <div class="icon">💻</div>
+
+                <h3>Code Assistant</h3>
+
+                <p>
+                    Generate and explain programming code.
+                </p>
+
+                <button
+                    onclick="selectTool('Code Assistant')">
+                    Use Tool
+                </button>
+
+            </div>
+
+
+            <div class="tool-card"
+                 data-name="Image Generator"
+                 data-category="image">
+
+                <div class="icon">🎨</div>
+
+                <h3>Image Generator</h3>
+
+                <p>
+                    Create creative image prompts using AI.
+                </p>
+
+                <button
+                    onclick="selectTool('Image Generator')">
+                    Use Tool
+                </button>
+
+            </div>
+
+
+            <div class="tool-card"
+                 data-name="Study Assistant"
+                 data-category="education">
+
+                <div class="icon">📚</div>
+
+                <h3>Study Assistant</h3>
+
+                <p>
+                    Get summaries and explanations for study topics.
+                </p>
+
+                <button
+                    onclick="selectTool('Study Assistant')">
+                    Use Tool
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI Generator -->
+    <section class="generator" id="generator">
+
+        <h2>AI Prompt Generator</h2>
+
+        <p id="selectedTool">
+            Select an AI tool above.
+        </p>
+
+        <textarea
+            id="promptInput"
+            placeholder="Enter your prompt here..."
+        ></textarea>
+
+        <button
+            class="generate-btn"
+            onclick="generateResponse()">
+
+            Generate Response
+
+        </button>
+
+
+        <div class="response-box">
+
+            <div class="response-header">
+
+                <h3>AI Response</h3>
+
+                <button onclick="copyResponse()">
+                    Copy
+                </button>
+
+            </div>
+
+            <p id="response">
+                Your AI response will appear here.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- History -->
+    <section class="history" id="history">
+
+        <div id="historyContainer"></div>
+
+        <h2>Prompt History</h2>
+
+        <button onclick="clearHistory()">
+            Clear History
+        </button>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 AI Tools Dashboard
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
